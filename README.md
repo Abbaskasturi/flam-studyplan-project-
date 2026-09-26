@@ -98,7 +98,7 @@ The default LLM setup uses Gemini via Google's OpenAI-compatible endpoint. You c
 | Variable | Purpose |
 | --- | --- |
 | `PORT` | API port, default `5000` |
-| `FRONTEND_ORIGIN` | Allowed CORS origin, default `http://localhost:5173` |
+| `FRONTEND_ORIGIN` | Comma-separated CORS origins. Include the Vercel URL, e.g. `https://flam-studyplan.vercel.app,http://localhost:5173` |
 | `LLM_API_KEY` | Secret provider key. Never put this in frontend code. |
 | `LLM_BASE_URL` | OpenAI-compatible base URL |
 | `LLM_MODEL` | Model name |
@@ -108,7 +108,7 @@ The default LLM setup uses Gemini via Google's OpenAI-compatible endpoint. You c
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_API_BASE_URL` | Backend origin, e.g. `https://flam-studyplan-project.onrender.com` |
+| `VITE_API_URL` or `VITE_API_BASE_URL` | Backend origin, e.g. `https://flam-studyplan-project.onrender.com`. Must be set **before** a Vercel build. Do not include `/api/generate`. |
 
 Do not prefix the LLM key with `VITE_`. Vite exposes `VITE_*` values to the browser.
 

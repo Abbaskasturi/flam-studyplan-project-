@@ -1,4 +1,4 @@
-const REQUEST_TIMEOUT_MS = 25000;
+const REQUEST_TIMEOUT_MS = 45000;
 
 const STATUS_MESSAGES = {
   400: {
@@ -24,10 +24,16 @@ const STATUS_MESSAGES = {
 };
 
 function getBaseUrl() {
-  const baseUrl =
+  const raw =
+    import.meta.env.VITE_API_URL ||
     import.meta.env.VITE_API_BASE_URL ||
     "https://flam-studyplan-project.onrender.com";
-  return baseUrl.replace(/\/$/, "");
+
+  return String(raw)
+    .trim()
+    .replace(/\/$/, "")
+    .replace(/\/api\/generate$/i, "")
+    .replace(/\/api$/i, "");
 }
 
 function createTimeoutError() {
@@ -51,6 +57,7 @@ function createUserError(title, detail, code = "REQUEST_FAILED") {
  * The browser never calls the LLM provider directly.
  */
 export async function generateStudySession(input, { signal } = {}) {
+  const topic = input;
   const controller = new AbortController();
   let didTimeout = false;
   const timeoutId = setTimeout(() => {
@@ -70,7 +77,7 @@ export async function generateStudySession(input, { signal } = {}) {
     const response = await fetch(`${getBaseUrl()}/api/generate`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ input }),
+      body: JSON.stringify({ topic, input: topic }),
       signal: controller.signal,
     });
 

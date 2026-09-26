@@ -11,7 +11,7 @@ export async function generateController(req, res, next) {
       throw new AppError("Please provide study input.", 400, "INVALID_BODY");
     }
 
-    const { input } = body;
+    const input = body.input ?? body.topic;
 
     if (input === undefined || input === null) {
       throw new AppError("Please provide study input.", 400, "INVALID_BODY");
