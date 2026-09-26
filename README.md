@@ -179,7 +179,4 @@ AI tools were used for brainstorming, debugging assistance, reviewing implementa
 ## Time Spent
 
 Approximately ___ hours.
-
-## Manual tests
-
-See [MANUAL_TESTING.md](./MANUAL_TESTING.md).
+2 hours 
