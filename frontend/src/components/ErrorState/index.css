@@ -1,0 +1,46 @@
+.error-state {
+  margin-top: 1.25rem;
+  padding: 1.4rem 1rem;
+  border: 1px solid #fecaca;
+  border-radius: 0.85rem;
+  background: #fef2f2;
+  text-align: center;
+}
+
+.error-state__icon {
+  display: inline-flex;
+  color: var(--danger);
+}
+
+.error-state__title {
+  margin: 0.55rem 0 0;
+  font-size: 1.05rem;
+  color: #7f1d1d;
+}
+
+.error-state__copy {
+  margin: 0.4rem 0 0;
+  color: #9f1239;
+  font-size: 0.9rem;
+}
+
+.error-state__retry {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.6rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid #fecaca;
+  border-radius: 0.55rem;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error-state__retry:focus-visible {
+  outline: 2px solid var(--danger);
+  outline-offset: 2px;
+}

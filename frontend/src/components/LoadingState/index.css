@@ -1,0 +1,39 @@
+.loading-state {
+  margin-top: 1.25rem;
+  padding: 1.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: var(--surface);
+  text-align: center;
+}
+
+.loading-state__spinner {
+  color: var(--accent);
+  animation: spin 0.9s linear infinite;
+}
+
+.loading-state__title {
+  margin: 0.7rem 0 0;
+  font-size: 1.05rem;
+}
+
+.loading-state__copy {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-state__spinner {
+    animation: none;
+  }
+}
