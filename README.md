@@ -108,7 +108,7 @@ The default LLM setup uses Gemini via Google's OpenAI-compatible endpoint. You c
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_API_BASE_URL` | Backend origin, e.g. `http://localhost:5000` |
+| `VITE_API_BASE_URL` | Backend origin, e.g. `https://flam-studyplan-project.onrender.com` |
 
 Do not prefix the LLM key with `VITE_`. Vite exposes `VITE_*` values to the browser.
 

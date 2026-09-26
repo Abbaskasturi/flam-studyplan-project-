@@ -1,9 +1,9 @@
-import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import generateRoutes from "./routes/generateRoutes.js";
+import express from "express";
 import { corsOptions } from "./middleware/corsConfig.js";
 import { errorHandler } from "./middleware/errorHandler.js";
+import generateRoutes from "./routes/generateRoutes.js";
 
 dotenv.config();
 
