@@ -67,7 +67,7 @@ copy .env.example .env
 # then edit backend/.env and set LLM_API_KEY
 
 npm install
-npm run dev
+node server.js
 ```
 
 In a second terminal:
@@ -83,7 +83,7 @@ From the repo root you can also run:
 
 ```bash
 npm run install:all
-npm run dev:backend
+node server.js:backend
 npm run dev:frontend
 ```
 
